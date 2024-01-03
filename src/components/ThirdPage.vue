@@ -1,13 +1,13 @@
 <template>
   <div>
-    <router-link v-if="isSecondPage" to="/" class="back">
+    <router-link v-if="isThirdPage" to="/" class="back">
       <div>
         Back
       </div>
     </router-link>
-    <div v-if="isSecondPage" class = "content">
+    <div v-if="isThirdPage" class = "content">
       <h1>This is Another Page!</h1>
-      <p>This is my second page.</p>
+      <p>This is my Third page.</p>
       <!-- Other content for the second page -->
     </div>
     <router-view></router-view>
@@ -18,8 +18,8 @@
 export default {
   name: 'AnotherPage',
   computed: {
-    isSecondPage() {
-      return this.$route.path === '/another-page';
+    isThirdPage() {
+      return this.$route.path === '/third-page';
     }
   }
 };

@@ -1,13 +1,14 @@
 import { createApp } from 'vue';
 import App from './components/App.vue';
 import AnotherPage from './components/AnotherPage.vue';
+import ThirdPage from './components/ThirdPage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 import 'vue';
 
 // Define your routes
 const routes = [
-  
+  { path: '/third-page', component: ThirdPage },
   { path: '/another-page', component: AnotherPage },
 ];
 
