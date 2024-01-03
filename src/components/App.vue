@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-link to="/another-page" class="gym-info-box">
+    <router-view v-if="isRootPage"></router-view>
+    <router-link v-if="isRootPage" to="/another-page" class="gym-info-box">
       <div>
         <h1>Weight Room</h1>
         <p>
@@ -16,6 +17,12 @@
 <script>
 export default {
   name: 'App',
+  computed: {
+    isRootPage() {
+      return this.$route.path === '/';
+    }
+  }
+  
 };
 </script>
 

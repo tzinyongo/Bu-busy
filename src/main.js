@@ -3,9 +3,11 @@ import App from './components/App.vue';
 import AnotherPage from './components/AnotherPage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
+import 'vue';
+
 // Define your routes
 const routes = [
-  { path: '/', component: App },
+  
   { path: '/another-page', component: AnotherPage },
 ];
 
@@ -13,7 +15,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  transisition: false,
+  //transition: false,
 });
 
 // Create the Vue app
