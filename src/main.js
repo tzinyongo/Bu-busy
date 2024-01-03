@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './components/App.vue';
 import AnotherPage from './components/AnotherPage.vue';
 import ThirdPage from './components/ThirdPage.vue';
+import FourthPage from './components/FourthPage.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 import 'vue';
@@ -10,6 +11,7 @@ import 'vue';
 const routes = [
   { path: '/third-page', component: ThirdPage },
   { path: '/another-page', component: AnotherPage },
+  { path: '/fourth-page', component: FourthPage },
 ];
 
 // Create the router instance

@@ -1,13 +1,13 @@
 <template>
   <div>
-    <router-link v-if="isThirdPage" to="/" class="back">
+    <router-link v-if="isFourthPage" to="/" class="back">
       <div>
         Back
       </div>
     </router-link>
-    <div v-if="isThirdPage" class = "content">
+    <div v-if="isFourthPage" class = "content">
       <h1>This is Another Page!</h1>
-      <p>This is my Third page.</p>
+      <p>This is my Fourth page.</p>
       <!-- Other content for the second page -->
     </div>
     <router-view></router-view>
@@ -18,8 +18,8 @@
 export default {
   name: 'AnotherPage',
   computed: {
-    isThirdPage() {
-      return this.$route.path === '/third-page';
+    isFourthPage() {
+      return this.$route.path === '/fourth-page';
     }
   }
 };
@@ -43,7 +43,5 @@ export default {
   margin-top: 40px; /* Adjusted margin-top */
   margin-left: 10px; 
 }
-
-
 
 </style>
