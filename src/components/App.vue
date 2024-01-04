@@ -2,11 +2,14 @@
   <div id="app" class="flex-container">
     <div class="header">
       <h1>BU-Busy</h1>
+      <h2> 
+        This is where you can find how busy the gym is!
+      </h2>
     </div>
 
     <div class="box-container">
       <!-- Router Links -->
-      <router-link v-if="isRootPage" to="/another-page" class="gym-info-box">
+      <router-link v-if="isRootPage" to="/weight-room" class="gym-info-box">
         <div>
           <h1>Weight Room</h1>
           <p>Welcome to our school's gym! Check out the facilities and enjoy your workout.</p>
@@ -56,8 +59,8 @@ export default {
 .box-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px; /* Optional: Add some margin between header and boxes */
+  justify-content: space-around;
+  gap: 2px; /* Optional: Add some margin between header and boxes */
 }
 
 .header {
@@ -81,7 +84,8 @@ export default {
   margin-bottom: 20px;
 }
 .gym-info-box:hover {
-  background-color: #bbb;
+  transform: scale(1.05); /* Enlarge only on hover */
+  transition: transform 0.2s ease;
   cursor: pointer;
 }
 .evaluate{
@@ -98,12 +102,16 @@ export default {
   margin-bottom: 20px;
   
 }
-.evaluate:hover{
-  background-color: #bbb;
+.evaluate:hover {
+  transform: scale(1.05); /* Enlarge only on hover */
+  transition: transform 0.2s ease;
   cursor: pointer;
 }
 
-.courts{
+.gym-info-box,
+.evaluate,
+.courts {
+  flex: 0 0 calc(33.33% - 2px);
   display: block;
   background-color: #ccc;
   padding: 20px;
@@ -115,10 +123,12 @@ export default {
   border-radius: 5px;
   padding: 5px 10px; 
   margin-bottom: 20px;
+  
 }
 
 .courts:hover{
-  background-color: #bbb;
+  transform: scale(1.05); /* Enlarge only on hover */
+  transition: transform 0.2s ease;
   cursor: pointer;
 }
 
