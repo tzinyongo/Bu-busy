@@ -43,7 +43,7 @@ export default {
   name: 'App',
   computed: {
     isRootPage() {
-      return this.$route.path === '/';
+      return this.$route.path === '/';  
     }
   }
 };

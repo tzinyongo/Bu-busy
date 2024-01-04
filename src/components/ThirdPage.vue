@@ -1,32 +1,43 @@
+<!-- src/App.vue -->
 <template>
-  <div>
+  <div id="app">
     <router-link v-if="isThirdPage" to="/" class="back">
       <div>
         Back
       </div>
     </router-link>
-    <div v-if="isThirdPage" class = "content">
-      <h1>This is Another Page!</h1>
-      <p>This is my Third page.</p>
-      <!-- Other content for the second page -->
+    <div v-if="isThirdPage" class="content">
+      <h1></h1>
+      <p></p>
+      <!-- Other content for the third page -->
     </div>
-    <router-view></router-view>
+    <router-view />
+    <RateFacility v-if="isThirdPage && isSurveyVisible" />
   </div>
 </template>
 
 <script>
+import RateFacility from '@/components/RateFacility.vue';
+
 export default {
-  name: 'AnotherPage',
+  name: 'ThirdPage',
+  components: {
+    RateFacility,
+  },
   computed: {
     isThirdPage() {
       return this.$route.path === '/third-page';
-    }
-  }
+    },
+    isSurveyVisible() {
+      // You can conditionally show the survey based on certain criteria
+      return true;
+    },
+  },
 };
 </script>
 
 <style scoped>
-.back{
+.back {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -36,14 +47,11 @@ export default {
   text-decoration: none;
   color: inherit;
   border-radius: 5px;
-  padding: 5px 10px; 
+  padding: 5px 10px;
 }
 
-.content{
+.content {
   margin-top: 40px; /* Adjusted margin-top */
-  margin-left: 10px; 
+  margin-left: 10px;
 }
-
-
-
 </style>
