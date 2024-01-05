@@ -21,7 +21,7 @@ export default {
   name: 'AnotherPage',
   computed: {
     isSecondPage() {
-      return this.$route.path === '/another-page';
+      return this.$route.path === '/second-page';
     },
     ...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
   },

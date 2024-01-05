@@ -11,7 +11,7 @@
     <!-- Box Container Section -->
     <div class="box-container">
       <!-- Router Links -->
-      <router-link v-if="isRootPage" to="/another-page" class="gym-info-box">
+      <router-link v-if="isRootPage" to="/second-page" class="gym-info-box">
         <div>
           <h1>Weight Room</h1>
           <p>Welcome to the Weight room! Check out the facilities and enjoy your workout.</p>
