@@ -30,22 +30,32 @@ export default {
 </script>
 
 <style scoped>
-.back{
+.back {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  display: block;
-  background-color: grey;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
   text-align: center;
   text-decoration: none;
-  color: inherit;
+  color: #fff;
+  background-color: rgba(12, 12, 12, 0.4); /* Subtle transparent gray */
+  border: 2px solid rgba(128, 128, 128, 0.5); /* Slightly transparent border */
   border-radius: 5px;
-  padding: 5px 10px; 
+  transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease;
 }
 
-.content{
-  margin-top: 40px; /* Adjusted margin-top */
-  margin-left: 10px; 
+.back:hover {
+  background-color: rgba(169, 169, 169, 0.6); /* Darker gray on hover */
+  border: 2px solid rgba(128, 128, 128, 0.7); /* Darker border on hover */
+  transform: scale(1.05); /* Slight scale on hover for depth effect */
+  cursor: pointer;
 }
 
+.content {
+  margin-top: 60px;
+  margin-left: 20px;
+}
 </style>
+

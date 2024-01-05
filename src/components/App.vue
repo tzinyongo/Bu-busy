@@ -2,9 +2,9 @@
   <div id="app" class="flex-container">
     <!-- Header Section -->
     <div class="header">
-      <h1>BU-Busy</h1>
+      <h1>Busy-BU</h1>
       <h2>
-        This is where you can find how busy the gym is!
+        This is where you can find how busy the FitRec is!
       </h2>
     </div>
 
@@ -14,8 +14,7 @@
       <router-link v-if="isRootPage" to="/another-page" class="gym-info-box">
         <div>
           <h1>Weight Room</h1>
-          <p>Welcome to our school's gym! Check out the facilities and enjoy your workout.</p>
-          <span>Click me to go to another page</span>
+          <p>Welcome to the Weight room! Check out the facilities and enjoy your workout.</p>
         </div>
       </router-link>
 
@@ -23,7 +22,6 @@
         <div>
           <h1>Courts</h1>
           <p>Check the business on the courts of our BU Fitrec</p>
-          <span>Click me to go to another page</span>
         </div>
       </router-link>
 
@@ -57,7 +55,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f9f9f9; /* Light background color */
+  background-color: rgba(12, 12, 12, 0); /* Subtle transparent gray */
 }
 
 .box-container {
@@ -70,8 +68,8 @@ export default {
 
 /* Header Styles */
 .header {
-  background-color: #ecf0f1; /* Light gray background */
-  color: #2c3e50; /* Dark gray text */
+  background-color: rgba(12, 12, 12, 0.4); /* Subtle transparent gray */
+  color: #ffffff; /* Dark gray text */
   padding: 20px;
   text-align: center;
 }
@@ -81,12 +79,12 @@ export default {
 .evaluate,
 .courts {
   flex: 0 0 calc(33.33% - 20px);
-  background-color: #fff; /* White background */
+  background-color: rgba(12, 12, 12, 0.4); /* Subtle transparent gray */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
-  color: #3498db; /* Light blue text */
+  color: #ffffff; /* Light blue text */
   transition: transform 0.2s ease, background-color 0.3s ease;
   margin-bottom: 20px;
 }
@@ -95,7 +93,7 @@ export default {
 .evaluate:hover,
 .courts:hover {
   transform: scale(1.05); /* Enlarge only on hover */
-  background-color: #ecf0f1; /* Light gray background on hover */
+  background-color: #1f1f1fae; /* Light gray background on hover */
   color: #2c3e50; /* Dark gray text on hover */
   cursor: pointer;
 }
@@ -105,14 +103,14 @@ export default {
 .evaluate h1,
 .courts h1 {
   margin-bottom: 10px;
-  color: #3498db; /* Light blue text */
+  color: #ffffff; /* Light blue text */
 }
 
 /* Paragraph Styles */
 .gym-info-box p,
 .evaluate p,
 .courts p {
-  color: #7f8c8d; /* Light gray text */
+  color: #c0c0c0; /* Light gray text */
   margin-bottom: 15px;
 }
 
@@ -124,4 +122,21 @@ export default {
   font-weight: bold;
 }
 
+#app {
+  position: relative;
+}
+
+#app::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/33/BU_Fitrec.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px); /* Adjust the blur radius as needed */
+  z-index: -1;
+}
 </style>

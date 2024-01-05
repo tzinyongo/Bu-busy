@@ -63,6 +63,7 @@
         });
         this.resetForm();
         this.submitted = true;
+        this.$router.push('/');
       },
       resetForm() {
         this.section = 'gym';
