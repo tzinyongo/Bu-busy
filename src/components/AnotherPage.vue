@@ -5,7 +5,7 @@
         Back
       </div>
     </router-link>
-    <div v-if="isSecondPage" class = "content">
+    <div v-if="isSecondPage" class="content">
       <h1>This is Another Page!</h1>
       <p>This is my second page.</p>
       <p>Average Weight room Rating: {{ averageRating }}</p>
@@ -24,12 +24,26 @@ export default {
       return this.$route.path === '/another-page';
     },
     ...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
-    },
-  
+  },
 };
 </script>
 
 <style scoped>
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.background-container {
+  position: relative;
+  background-image: url('https://pbs.twimg.com/media/FHEjUAhXEAoSFiM?format=jpg&name=4096x4096');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Adjust the height as needed */
+}
+
 .back {
   position: absolute;
   top: 20px;
@@ -58,4 +72,3 @@ export default {
   margin-left: 20px;
 }
 </style>
-
