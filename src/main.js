@@ -8,6 +8,7 @@ import store from './store'; // Import the modular Vuex store
 import 'vue';
 
 
+
 // Define your routes
 const routes = [
   { path: '/third-page', component: ThirdPage },
@@ -23,7 +24,9 @@ const router = createRouter({
 });
 
 // Create the Vue app
-const app = createApp(App).use(store);
+const app = createApp(App)
+
+app.use(store);
 
 // Use the router with the app
 app.use(router);

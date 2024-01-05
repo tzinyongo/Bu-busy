@@ -8,8 +8,7 @@
     <div v-if="isSecondPage" class = "content">
       <h1>This is Another Page!</h1>
       <p>This is my second page.</p>
-      <p>Average Gym Rating: {{ getAverageRating('gym') }}</p>
-      <p>Average Courts Rating: {{ getAverageRating('courts') }}</p>
+      <p>Average Weight room Rating: {{ averageRating }}</p>
       <!-- Other content for the second page -->
     </div>
     <router-view></router-view>
@@ -21,16 +20,12 @@ import { mapGetters } from 'vuex';
 export default {
   name: 'AnotherPage',
   computed: {
-    isThirdPage() {
-      return this.$route.path === '/third-page';
+    isSecondPage() {
+      return this.$route.path === '/another-page';
     },
-    ...mapGetters(['averageRating']),
-  },
-  methods: {
-    getAverageRating(section) {
-      return this.averageRating(section).toFixed(2);
+    ...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
     },
-  },
+  
 };
 </script>
 
