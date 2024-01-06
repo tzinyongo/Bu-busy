@@ -1,11 +1,10 @@
 <template>
   <div class="app flex-container" :class="{ isRootPage: isRootPage }" >
+    
     <!-- Header Section -->
-    <div class="header">
+    <div v-if="isRootPage" class="header">
       <h1>Busy-BU</h1>
-      <h2>
-        This is where you can find how busy the FitRec is!
-      </h2>
+      <h2>This is where you can find how busy the FitRec is!</h2>
     </div>
 
     <!-- Box Container Section -->

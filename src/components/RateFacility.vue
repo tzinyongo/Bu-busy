@@ -1,4 +1,8 @@
 <template>
+  <div class="header">
+    <h1>Courts</h1>
+    <h2>Below is how busy the courts are.</h2>
+  </div>
   <div class="ratefacilitybackground">
     <div class="content" v-if="!submitted">
       <h2 v-if="!submitted">Rate Our Facility</h2>
@@ -40,8 +44,8 @@
       <br />
       <button @click="submitRating">Submit</button>
     </div>
-    <div class="content" v-if="submitted">
-      <p>Thank you for submitting!</p>
+        <div class="content" v-if="submitted">
+          <p>Thank you for submitting!</p>
     </div>
   </div>
 </template>
