@@ -9,7 +9,7 @@
     </div>
   </router-link>
   <div class="weightroombackground">
-      <div v-if="isSecondPage" class="content">
+      <div v-if="isSecondPage" class="content1">
         <h1>This is Another Page!</h1>
         <p>This is my second page.</p>
         <p>Average Weight room Rating: {{ averageRating }}</p>

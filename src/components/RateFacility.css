@@ -11,6 +11,7 @@
     border: 2px solid rgba(128, 128, 128, 0.5); /* Slightly transparent border */
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease;
+    z-index: 2;
   }
   
   .back:hover {
@@ -41,7 +42,15 @@
     background-size: cover;
     background-position: center;
     filter: blur(10px); /* Adjust the blur radius as needed */
-    z-index: -1;
+    
+  }
+  .content {
+    position: absolute;
+    top: 240%;
+    left: 50%;
+    transform: translate(-50%, -52%);
+    text-align: initial;
+    z-index: 1; /* Adjusted z-index */
   }
 
   .header {
@@ -49,6 +58,7 @@
     color: #ffffff; /* Dark gray text */
     padding: 20px;
     text-align: center;
+    z-index: 2;
   }
   
 
