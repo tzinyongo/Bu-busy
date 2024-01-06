@@ -41,6 +41,7 @@ export default {
     position: fixed;
     top: 20px;
     left: 20px;
+    display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     text-align: center;
