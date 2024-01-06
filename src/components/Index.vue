@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{ isRootPage: isRootPage }" class="flex-container">
+  <div class="app flex-container" :class="{ isRootPage: isRootPage }" >
     <!-- Header Section -->
     <div class="header">
       <h1>Busy-BU</h1>
@@ -58,12 +58,12 @@ export default {
     background-color: rgba(12, 12, 12, 0); /* Subtle transparent gray */
   }
   
-  #app {
+  .app {
     position: relative;
   }
   
   /* Modified: Add background image only on the root page */
-  #app::before {
+  .app::before {
     content: "";
     position: fixed;
     top: 0;
@@ -80,7 +80,7 @@ export default {
   }
   
   /* Added: Show the background only on the root page */
-  #app.isRootPage::before {
+  .app.isRootPage::before {
     display: block;
   }
   

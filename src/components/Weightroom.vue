@@ -1,74 +1,98 @@
 <template>
-  <div>
-    <router-link v-if="isSecondPage" to="/" class="back">
-      <div>
-        Back
-      </div>
-    </router-link>
-    <div v-if="isSecondPage" class="content">
-      <h1>This is Another Page!</h1>
-      <p>This is my second page.</p>
-      <p>Average Weight room Rating: {{ averageRating }}</p>
-      <!-- Other content for the second page -->
+  <router-link v-if="isSecondPage" to="/" class="back">
+    <div>
+      Back
     </div>
-    <router-view></router-view>
-  </div>
-</template>
+  </router-link>
+  <div class="weightroombackground">
+      <div v-if="isSecondPage" class="content">
+        <h1>This is Another Page!</h1>
+        <p>This is my second page.</p>
+        <p>Average Weight room Rating: {{ averageRating }}</p>
+        <!-- Other content for the second page -->
+      </div>
+      <div class="blur-background"></div>
+      <router-view></router-view>
+    </div>
+  </template>
 
 <script>
-import { mapGetters } from 'vuex';
-export default {
-  name: 'AnotherPage',
-  computed: {
-    isSecondPage() {
-      return this.$route.path === '/second-page';
+  import { mapGetters } from 'vuex';
+  export default {
+    name: 'WeightRoom',
+    computed: {
+      isSecondPage() {
+        return this.$route.path === '/second-page';
+      },
+      ...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
     },
-    ...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
-  },
-};
-</script>
+  };
+  </script>
 
 <style scoped>
-
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-.background-container {
-  position: relative;
+.weightroombackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.blur-background {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('https://pbs.twimg.com/media/FHEjUAhXEAoSFiM?format=jpg&name=4096x4096');
   background-size: cover;
   background-position: center;
-  height: 100vh; /* Adjust the height as needed */
+  filter: blur(10px);
+  z-index: -1;
 }
 
 .back {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
+  z-index: 2; /* Set a higher z-index */
   display: inline-block;
   padding: 10px 20px;
   font-size: 16px;
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background-color: rgba(12, 12, 12, 0.4); /* Subtle transparent gray */
-  border: 2px solid rgba(128, 128, 128, 0.5); /* Slightly transparent border */
+  background-color: rgba(12, 12, 12, 0.4);
+  border: 2px solid rgba(128, 128, 128, 0.5);
   border-radius: 5px;
   transition: background-color 0.3s ease, transform 0.2s ease, border 0.3s ease;
 }
 
 .back:hover {
-  background-color: rgba(169, 169, 169, 0.6); /* Darker gray on hover */
-  border: 2px solid rgba(128, 128, 128, 0.7); /* Darker border on hover */
-  transform: scale(1.05); /* Slight scale on hover for depth effect */
+  background-color: rgba(169, 169, 169, 0.6);
+  border: 2px solid rgba(128, 128, 128, 0.7);
+  transform: scale(1.05);
   cursor: pointer;
 }
 
 .content {
   margin-top: 60px;
   margin-left: 20px;
+  background-color: rgba(12, 12, 12, 0.4);
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
 }
+
 </style>
+
+
+  
