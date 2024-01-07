@@ -11,6 +11,7 @@ import 'vue';
 
 // Define your routes
 const routes = [
+  
   { path: '/third-page', component: Survey },
   { path: '/second-page', component: Weightroom },
   { path: '/fourth-page', component: Courts },

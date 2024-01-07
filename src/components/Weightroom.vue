@@ -21,15 +21,45 @@
   </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+  import axios from 'axios'; 
   export default {
     name: 'WeightRoom',
+    data(){
+    return {
+      averageRating:0,
+    };
+  },
     computed: {
       isSecondPage() {
         return this.$route.path === '/second-page';
       },
-      ...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
+      //...mapGetters('Weight-room', ['averageRating']), // Use the getter from the 'gym' module
     },
+    methods:{
+    async fetchAverageRating(){
+      try{
+        const response = await axios.get('http://localhost:3000/api/averageRating');
+        if(!response.ok)
+        {
+          throw new Error('HTTP error');
+        }
+        console.log('Response:', response); // Log the entire response object
+        this.averageRating = response.data.averageRating;
+      }catch(error){
+        console.error('Error fetching average rating: ', error);
+      }
+    },
+  },
+  mounted(){
+    if(this.isSecondPage){
+      this.fetchAverageRating();
+      //fetch average rating every hour
+    setInterval(() => {
+      this.fetchAverageRating();
+
+    }, 3600000);
+    } 
+  },
   };
   </script>
 

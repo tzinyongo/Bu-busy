@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -61,14 +62,20 @@ export default {
     };
   },
   methods: {
-    submitRating() {
-      this.$store.dispatch('submitRating', {
-        section: this.section,
-        rating: parseInt(this.rating),
-      });
-      this.resetForm();
-      this.submitted = true;
-      this.$router.push('/');
+    async submitRating() {
+      try{
+        const response = await axios.post('http://localhost:3000/api/responses', {
+          section: this.section,
+          rating: parseInt(this.rating),
+        });
+        console.log(response.data.message);
+        this.resetForm();
+        this.submitted = true;
+        this.$router.push('/');
+      }
+      catch(error){
+        console.error('Error submitting rating:', error);
+      }
     },
     isThirdPage() {
       return this.$route.path === '/third-page';

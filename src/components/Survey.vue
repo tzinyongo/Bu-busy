@@ -18,12 +18,12 @@
 
 <script>
 import RateFacility from '@/components/RateFacility.vue';
-
 export default {
   name: 'ThirdPage',
   components: {
     RateFacility,
   },
+
   computed: {
     isThirdPage() {
       return this.$route.path === '/third-page';
@@ -31,8 +31,9 @@ export default {
     isSurveyVisible() {
       // You can conditionally show the survey based on certain criteria
       return true;
-    },
+    }
   },
+
 };
 </script>
 
