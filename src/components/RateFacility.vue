@@ -83,6 +83,7 @@ export default {
     resetForm() {
       this.section = 'gym';
       this.rating = '1';
+      this.$router.push('/');
     },
   },
 };
